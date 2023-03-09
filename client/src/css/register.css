@@ -1,0 +1,64 @@
+
+/* Container */
+
+.col-md-6 {
+    width: 70%;
+    margin: 30px auto;
+    color: grey;
+}
+
+/* Label */
+
+.form-label {
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+/* Input */
+
+.my-2 {
+    width: 100%;
+    margin: 10px 0;
+    background-color: #F0F2F2;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+
+/* Buttons */
+.d-flex {
+    text-align: center;
+}
+/* sign up */
+.btn {
+    padding: 13px 25px;
+    background: linear-gradient(90deg, rgba(241,100,5,1) 0%, rgba(253,200,48,1) 75%);
+    border: none;
+    border-radius: 30px;
+    font-weight: bolder;
+    color: white;
+
+}
+/* back */
+
+.rounded {
+    color: white;
+    text-decoration: none;
+    background-color: rgb(205, 205, 205);
+    padding: 7px 20px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+
+/* Already user? */
+
+.mt-4 {
+    text-align: center;
+}
+
+.ChangeSign {
+    color: grey;
+    font-weight: bolder;
+}

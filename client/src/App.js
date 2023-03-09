@@ -16,7 +16,7 @@ import Article from "./Components/Articlecard";
 // import DeleteAccount from "./Component/DeleteAccount";
 // import AddArticle from "./Component/AddArticle";
 // import ManageArticle from "./Component/ManageArticle";
-// import EditArticle from "./Component/EditArticle";
+import Edit from "./Components/Edit";
 
 function App() {
   const [cookies, setCookie, removeCookie] = useCookies(['mycookie']);
@@ -40,8 +40,8 @@ function App() {
         {/* <Route path="/profile" element={<Profile cookies={cookies} />} />
         <Route path="/delete-account" element={<DeleteAccount cookies={cookies} removeCookie={removeCookie} />} />
         <Route path="/add-article" element={<AddArticle cookies={cookies} />} />
-        <Route path="/manage-article" element={<ManageArticle cookies={cookies} />} />
-        <Route path="/edit-article/:id" element={<EditArticle/>} /> */}
+        <Route path="/manage-article" element={<ManageArticle cookies={cookies} />} /> */}
+        <Route path="/edit/:id" element={<Edit/>} />
         <Route path="*" element={() => <p>Page Not Found</p>} />
       </Routes>
 

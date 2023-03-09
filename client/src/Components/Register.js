@@ -50,7 +50,6 @@ function Register() {
 
     return (
         <Container className="my-5">
-            <h1 className="text-center mb-5">Let's eat</h1>
             <Row className="justify-content-center">
                 <Col md={6}>
                    
@@ -60,7 +59,7 @@ function Register() {
                             <Form.Control
                                 type="text"
                                 name="name"
-                                placeholder="Name"
+                                placeholder="name"
                                 value={name}
                                 onChange={handleChange}
                                 autoComplete="off"
@@ -75,7 +74,7 @@ function Register() {
                             <Form.Control
                                 type="username"
                                 name="username"
-                                placeholder="Username"
+                                placeholder="username"
                                 value={Username}
                                 onChange={handleChange}
                                 autoComplete="off"
@@ -87,7 +86,7 @@ function Register() {
                             <Form.Control
                                 type="email"
                                 name="email"
-                                placeholder="Email"
+                                placeholder="email"
                                 value={email}
                                 onChange={handleChange}
                                 autoComplete="off"
@@ -99,7 +98,7 @@ function Register() {
                             <Form.Control
                                 type="password"
                                 name="password"
-                                placeholder="Password"
+                                placeholder="password"
                                 value={password}
                                 onChange={handleChange}
                                 autoComplete="off"
@@ -111,7 +110,7 @@ function Register() {
                             <Form.Control
                                 type="password"
                                 name="confirmPassword"
-                                placeholder="Confirm Password"
+                                placeholder="confirm password"
                                 value={password}
                                 onChange={handleChange}
                                 autoComplete="off"
@@ -119,34 +118,27 @@ function Register() {
                             />
                         </Form.Group>
                         <div className="d-flex justify-content-around">
-                            <Link
-                                to="/"
-                                className="px-5 py-2 rounded"
-                                style={{
-                                    backgroundColor: "#212529",
-                                    color: "#FAF2E6",
-                                    border: "2px solid black",
-                                    textDecoration: "none",
-                                    marginTop: "1rem",
-                                }}
-                            >
-                                Back
-                            </Link>
                             <Button
                                 type="submit"
                                 className="px-5 py-2"
                                 variant="dark"
-                                style={{ color: "#FAF2E6", marginTop: "1rem" }}
                             >
                                Sign Up
                             </Button>
                         </div>
                     </Form>
                     <p className="mt-4 text-center">
-                        Already user?{" "}
+                        Already user? <Link to="/login" className="ChangeSign"> Sign In</Link>
                         {/* <LinkInClass to="/login">Sign In</LinkInClass> */}
                     </p>
+                    <Link
+                       to="/"
+                       className="px-5 py-2 rounded"
+                    >
+                        Back
+                    </Link>
                 </Col>
+
             </Row>
             {redirect && <Navigate to="/login" />}
         </Container>
