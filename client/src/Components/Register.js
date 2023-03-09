@@ -10,6 +10,7 @@ import LinkInClass from "./LinkInClass";
 
 import "../css/register.css";
 
+
 function Register() {
     const [name, setName] = useState("");
     const [Username,setUsername]=useState("");
@@ -143,7 +144,7 @@ function Register() {
                     </Form>
                     <p className="mt-4 text-center">
                         Already user?{" "}
-                        <LinkInClass to="/login">Sign In</LinkInClass>
+                        {/* <LinkInClass to="/login">Sign In</LinkInClass> */}
                     </p>
                 </Col>
             </Row>
