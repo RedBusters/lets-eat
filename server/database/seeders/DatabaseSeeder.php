@@ -22,7 +22,12 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-
+        \App\Models\User::factory()->create([
+            'name' => 'Admin',
+            'email' => 'admin@admin.admin',
+            'password' => Hash::make('987654321'),
+            'admin' => true
+        ]);
   
         $article = Article::create([
             'title' => 'Nutritional Quality and Health Benefits of Vegetables: A Review',
