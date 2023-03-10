@@ -21,7 +21,13 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-
+        
+        \App\Models\User::factory()->create([
+            'name' => 'Admin',
+            'email' => 'admin@admin.admin',
+            'password' => Hash::make('987654321'),
+            'admin' => true
+        ]);
 
         $article = Article::create([
             'title' => 'Welcome to ecoal23',
