@@ -20,7 +20,16 @@ class ArticleController extends Controller
         return $articles;
 
     }
-
+    public function allArticles(){
+        $articles = Article::orderBy("created_at", "desc")->get();
+        foreach($articles as $article){
+            $tags = $article->tags;
+            $article['tags'] = $tags;
+            $article->content = "";
+            $article->mediaURL ="";
+        }
+        return response()->json([$articles]);
+    }
     public function getArticle(Request $request) {
     
     $article = Article::where('id', $request["id"])->firstOrFail();
@@ -48,6 +57,8 @@ class ArticleController extends Controller
         foreach($articles as $article){
             $tags = $article->tags;
             $article['tags'] = $tags;
+            $article->content = "";
+            $article->mediaURL ="";
         }
         return response()->json([$articles]);
     }

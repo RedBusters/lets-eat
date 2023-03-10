@@ -24,6 +24,7 @@ Route::get('/short/{id}', [ArticleController::class, 'short']);
 Route::get('/newest/{nb}', [ArticleController::class, 'newest'] );
 Route::get('/byTag/{tag}', [ArticleController::class, 'getArticlesByTag'] );
 Route::post('/search/{search}', [ArticleController::class, 'search']);
+Route::post('/all', [ArticleController::class, 'allArticles']);
 
 
 
