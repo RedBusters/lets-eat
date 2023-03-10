@@ -1,25 +1,89 @@
-.header-container {
-    position: relative;
-    height: 100vh;
+
+.navigation-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 5%;
+  align-items: center;
+  width: clamp(0px, 90%, 400px);
+  margin: 0 auto;
+}
+
+.navigation-bar .logo {
+  width: 2.7rem;
+}
+
+.navigation-bar img {
+  width: 2rem;
+}
+
+.search-form {
+  display: flex;
+}
+
+.search-form input {
+  border: 1px solid orange;
+  border-right: none;
+  padding: 7px 10px;
+  border-radius: 20px 0 0 20px;
+}
+
+.search-form button {
+  border: 1px solid orange;
+  border-left: none;
+  border-radius: 0 20px 20px 0;
+  width: 2rem;
+}
+
+.navigation-bar .search-img {
+  width: 1rem;
+}
+
+
+
+/* Burger Menu */
+
+/*.header-toogle {
+  position: absolute;
+  right: 10px; top: 20px;
+  font-size: 5rem;
+  display: flex;
+}*/
+
+  .header-toogle-close {
+      display: none;
   }
   
-  .video-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    z-index: -1;
+  .header-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      display: grid;
+      background-color: #F0F2F2;
+      position: absolute;
+      z-index: 3;
+      width: 100%;
+  }
+
+  .header-menu a {
+      font-size: 1rem;
+      margin-top: 10px;
+      padding: 10px 0;
+      text-decoration: none;
+      color: orange;
+      border-bottom: 1px solid orange;
+      margin: 5px 10%;
+      text-align: center;
   }
   
-  video {
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  #main-header:target .header-menu {
+      max-height: 600px;
+      transition: max-height 1s ease;
+  }
+  
+  #main-header:target .header-toogle-close {
+      display: inline;
+  }
+      
+  #main-header:target .header-toogle-open {
+      display: none;
   }

@@ -1,0 +1,46 @@
+
+.header-container {
+    align-items: center;
+}
+  
+  .header-container video {
+    max-width: 100%;
+    position: relative;
+  }
+
+  .title-banner {
+    position: absolute;
+    z-index: 1;
+    left: 15%;
+    top: 10%;
+  }
+
+  .title-banner img {
+    width: 85%;
+    
+  }
+
+  .navbar-brand {
+    display: none;
+  }
+
+  .navbar-toggler {
+    display: none;
+  }
+
+  .me-auto {
+    display: flex;
+    justify-content: space-between;
+    background-color: #F0F2F2;
+    padding: 10px 5px;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    background: linear-gradient(90deg, rgba(241,100,5,1) 0%, rgba(253,200,48,1) 80%);
+    color: white;
+    border-radius: 20px;
+    padding: 10px 12px;
+    font-size: 0.8rem;
+    font-weight: bolder;
+  }

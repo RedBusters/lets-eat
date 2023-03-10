@@ -3,12 +3,13 @@ import { useState, useEffect } from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import Header from './Header';
+// import Header from './Header';
 import headerGif from '../video/food-24999.mp4';
 // import NavDropdown from 'react-bootstrap/NavDropdown';
-
-
+import imageTitle from '../images/title.png';
+import {  Link } from "react-router-dom";
 import '../css/home.css';
+import Articlecard from './Articlecard';
 
 function Home(props)
 {
@@ -16,9 +17,8 @@ function Home(props)
     // const[ArticleThumbnail,setArticleThumbnail]=useState([]);
     async function getArticles()
     {
-        const articles = (await axios.get('http://localhost:8000/articles')).data
+        const articles = (await axios.get('http://127.0.0.1:8000/api/articles')).data
         // setArticles(articles)
-        // console.log(articles)
     }
 
     useEffect(() => { // this is a hook called everytime the function is rendered again
@@ -28,12 +28,18 @@ getArticles()
 
   
 return (
-    <div className='common'>
+
       
-           <div>
-            {/* <Header/> */}
-            {Header}
-            </div>      
+      <div className='common'>
+      {/* <Header /> */}
+       <div className="header-container">
+        
+        <span className="title-banner"><img src={imageTitle} alt="Let's eat!" /></span>
+        <video autoPlay loop muted>
+            <source src={headerGif} type="video/mp4"/>
+        </video>
+        </div>
+                  
     <Navbar bg="light" expand="lg">
       <Container>
         <Navbar.Brand href="#home">Let's Eat</Navbar.Brand>
@@ -58,11 +64,17 @@ return (
           </Nav>
         </Navbar.Collapse>
       </Container>
+      <Link to="/add" className="add">ADD</Link>
+      <Articlecard/>
     </Navbar>
     </div>
   );
 }
 export default Home;
+
+
+
+
 
 
 

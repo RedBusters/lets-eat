@@ -1,10 +1,10 @@
 
 
-
 import React, { useState } from "react";
 import { Navigate, Link } from "react-router-dom";
 import axios from "axios";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import Header from './Header';
 
 import LinkInClass from "./LinkInClass";
 
@@ -50,9 +50,11 @@ function Register() {
 
     return (
         <Container className="my-5">
-            <Row className="justify-content-center">
+            <Header/>
+            {/* {Header} */}
+            <Row className="content">
                 <Col md={6}>
-                   
+                <h3 className="mb-4 title">Register</h3>
                     <Form onSubmit={handleSubmit} className="p-4">
                         <Form.Group controlId="name">
                             <Form.Label>Name</Form.Label>

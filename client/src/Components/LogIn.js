@@ -66,6 +66,9 @@ import React, { useState } from "react";
 import { Navigate, Link } from "react-router-dom";
 import axios from "axios";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import Header from './Header';
+import "../css/LogIn.css";
+
 
 function Login({ cookies, setCookie }) {
     const [username, setUsername] = useState("");
@@ -100,10 +103,10 @@ function Login({ cookies, setCookie }) {
 
     return (
         <Container className="my-5">
-            <h1 className="text-center mb-5">Let's Eat</h1>
-            <Row className="justify-content-center">
+            <Header />
+            <Row className="content">
                 <Col md={6}>
-                    <h3 className="mb-4 text-center">Login</h3>
+                    <h3 className="mb-4 title">Login</h3>
                     <Form onSubmit={handleSubmit} className="p-4">
                         <Form.Group controlId="username">
                             <Form.Label>Username</Form.Label>
@@ -122,7 +125,7 @@ function Login({ cookies, setCookie }) {
                             <Form.Control
                                 type="password"
                                 name="password"
-                                placeholder="Password"
+                                placeholder="password"
                                 value={password}
                                 onChange={handleChange}
                                 autoComplete="off"
@@ -130,24 +133,10 @@ function Login({ cookies, setCookie }) {
                             />
                         </Form.Group>
                         <div className="d-flex justify-content-around">
-                            <Link
-                                to="/"
-                                className="px-5 py-2 rounded"
-                                style={{
-                                    backgroundColor: "#212529",
-                                    color: "#FAF2E6",
-                                    border: "2px solid black",
-                                    textDecoration: "none",
-                                    marginTop: "1rem",
-                                }}
-                            >
-                                Back
-                            </Link>
                             <Button
                                 type="submit"
                                 className="px-5 py-2"
                                 variant="dark"
-                                style={{ color: " rgba(241,100,5,1)", marginTop: "1rem" }}
                             >
                                 Login
                             </Button>
@@ -155,10 +144,16 @@ function Login({ cookies, setCookie }) {
                     </Form>
                     <p className="mt-4 text-center">
                         Don't have an account?{" "}
-                        <Link to="/register" className="link-in-class">
+                        <Link to="/register" className="ChangeSign">
                             Sign Up
                         </Link>
                     </p>
+                            <Link
+                                to="/"
+                                className="px-5 py-2 rounded"
+                            >
+                                Back
+                            </Link>
                 </Col>
             </Row>
         </Container>

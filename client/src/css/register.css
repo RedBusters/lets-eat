@@ -1,15 +1,24 @@
 
 /* Container */
 
-.col-md-6 {
+.content .col-md-6 {
     width: 70%;
     margin: 30px auto;
     color: grey;
 }
 
+/* Title */
+
+.content h3 {
+    color: orange;
+    text-align: center;
+    font-size: 4rem;
+    margin: -30px 0 30px 0;
+}
+
 /* Label */
 
-.form-label {
+.content .form-label {
     margin-left: 10px;
     font-weight: bold;
 }
@@ -31,7 +40,7 @@
     text-align: center;
 }
 /* sign up */
-.btn {
+.content .btn {
     padding: 13px 25px;
     background: linear-gradient(90deg, rgba(241,100,5,1) 0%, rgba(253,200,48,1) 75%);
     border: none;

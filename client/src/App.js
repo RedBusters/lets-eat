@@ -10,11 +10,11 @@ import Register from "./Components/Register";
 import Login from "./Components/LogIn";
 import Home from "./Components/Home";
 // import Footer from "./Component/Footer";
-// import Articles from "./Component/Articles";
+// import Articles from "./Components/Articles";
 import Article from "./Components/Articlecard";
 // import Profile from "./Component/Profile";
 // import DeleteAccount from "./Component/DeleteAccount";
-// import AddArticle from "./Component/AddArticle";
+import AddArticle from "./Components/Add";
 // import ManageArticle from "./Component/ManageArticle";
 import Edit from "./Components/Edit";
 
@@ -38,10 +38,10 @@ function App() {
         {/* <Route path="/articles" element={<Articles searchTerm={searchTerm} />} /> */}
         <Route path="/articles/:id" element={<Article />} />
         {/* <Route path="/profile" element={<Profile cookies={cookies} />} />
-        <Route path="/delete-account" element={<DeleteAccount cookies={cookies} removeCookie={removeCookie} />} />
-        <Route path="/add-article" element={<AddArticle cookies={cookies} />} />
-        <Route path="/manage-article" element={<ManageArticle cookies={cookies} />} /> */}
-        <Route path="/edit/:id" element={<Edit/>} />
+        <Route path="/delete-account" element={<DeleteAccount cookies={cookies} removeCookie={removeCookie} />} /> */}
+        <Route path="/add" element={<AddArticle cookies={cookies} />} />
+        {/* <Route path="/manage-article" element={<ManageArticle cookies={cookies} />} />
+        <Route path="/edit/:id" element={<Edit/>} /> */}
         <Route path="*" element={() => <p>Page Not Found</p>} />
       </Routes>
 

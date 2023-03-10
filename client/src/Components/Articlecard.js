@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 // import { ACCESS_LEVEL_ADMIN} from "../config/global_constants"
 import axios from "axios";
+import { object } from "prop-types";
 
 
 function Articlecard({ searchTerm }) {
@@ -16,7 +17,8 @@ function Articlecard({ searchTerm }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        if (cookies && cookies.mycookie) {
+        
+        if (cookies ) {
           const response = await axios.get(
             "http://127.0.0.1:8000/api/articles"
           );
@@ -28,11 +30,14 @@ function Articlecard({ searchTerm }) {
     };
     fetchData();
   }, [cookies]);
+  let filteredArticles = [];
+  articles.map((a)=>a.map((b)=> filteredArticles.push(b)))
+  
 
-  const filteredArticles = articles.filter(article => {
-    return article.title.toLowerCase().includes(searchTerm.toLowerCase());
-  });
-
+  // const filteredArticles = articles.filter(article => {
+  //   return article.title.includes(searchTerm.toLowerCase());
+  // });
+  // console.log(articles[0][0]["id"])
   return (
     <Container className="my-5">
       <h1 className="text-center mb-5">Let's eat</h1>
@@ -43,7 +48,9 @@ function Articlecard({ searchTerm }) {
             <Card className="mb-3" key={article.id}>
               <Card.Img variant="top" src={article.thumbnailURL} />
               <Card.Body>
-                <Card.Title>{article.title}</Card.Title>
+                
+                                <Card.Title>{article.title}</Card.Title>
+                                <Card.Text>{article.content}</Card.Text>
                                <p>Created on: {article.created_at}</p>
                 <Link to={`/articles/${article.id}`}>
                   <Button variant="primary">Read More</Button>
